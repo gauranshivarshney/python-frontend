@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Inter, Segoe UI, Roboto, sans-serif
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #0f1121 0%, #1e203d 100%);
+    color: #f3f4f8;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: #141625;
+    border-bottom: 1px solid #282b46;
+}
+
+header h1 {
+    flex: 1;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+.run-btn {
+    background: #62ac64;
+    border: none;
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.run-btn:hover {
+    background: #45a045
+}
+
+main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.editor-pane {
+    flex: 1.8;
+    border-right: 1px solid #282b46;
+}
+
+.io-pane {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+    min-height: 0;
+}
+
+.terminal-box {
+    flex: 1;
+    background: #1e1e2e;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 6px;
+}
+
+.io-pane textarea {
+    height: 70px;
+    resize: none;
+    background: #0f0f1c;
+    border: 1px solid #333654;
+    border-radius: 6px;
+    color: #f1f1f1;
+    padding: 8px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.turtle-img {
+    width: 100%;
+    border: 1px solid #333654;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+.success-message {
+    margin-top: 6px;
+    padding: 10px;
+    background-color: #62ac64;
+    color: white;
+    border-radius: 5px;
+    font-weight: 500;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    z-index: 1000;
+}
+
+.output-wrapper {
+    max-height: 60%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+
+  .editor-pane {
+    flex: none;
+    height: 50vh; 
+    border-right: none;
+    border-bottom: 1px solid #282b46;
+  }
+
+  .io-pane {
+    flex: none;
+    height: 50vh;
+    padding: 12px 16px;
+  }
+
+  .output-wrapper {
+    max-height: 50%;
+  }
+
+  .io-pane textarea {
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1rem;
+  }
+
+  .run-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+
+  .success-message {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
