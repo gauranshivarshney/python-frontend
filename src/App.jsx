@@ -5,7 +5,7 @@ import { io } from 'socket.io-client';
 import 'xterm/css/xterm.css';
 import './App.css';
 
-const socket = io('https://python-backend-31f4.onrender.com');
+const socket = io('http://localhost:5000');
 
 export default function App() {
     const [code, setCode] = useState(`print("Hello from Python!")\nfor i in range(5):\n    print(i)`);
