@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "chmod +x node_modules/.bin/vite",
     "dev": "vite",
     "build": "vite build",
     "predeploy": "npm run build",
