@@ -3,7 +3,10 @@ FROM node:18-alpine AS build
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+
+RUN apk add --no-cache bash \
+ && npm install \
+ && chmod -R 755 node_modules/.bin
 
 COPY . .
 
